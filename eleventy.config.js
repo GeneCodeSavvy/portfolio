@@ -4,8 +4,12 @@ import relativeLinks from "./_config/relative-links.js";
 
 export default function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./src/assets/favicon");
-	eleventyConfig.addPlugin(relativeLinks);
-    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(relativeLinks);
+	// eleventyConfig.addFilter("relativePath", function (targetPath, pageUrl) {
+	// 	const from = pageUrl.endsWith("/") ? pageUrl : path.dirname(pageUrl);
+	// 	return path.relative(from, targetPath).replace(/\\/g, "/");
+	// });
+	eleventyConfig.addPlugin(syntaxHighlight);
 	// eleventyConfig.addFilter("relativePath", function (targetPath, pageUrl) {
 	// 	const from = pageUrl.endsWith("/") ? pageUrl : path.dirname(pageUrl);
 	// 	return path.relative(from, targetPath).replace(/\\/g, "/");
