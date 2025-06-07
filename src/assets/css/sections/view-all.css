@@ -1,0 +1,15 @@
+/* View All Links */
+.view-all {
+    margin-top: var(--spacing-lg);
+    font-style: italic;
+}
+
+.view-all a {
+    color: var(--color-accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+
+.view-all a:hover {
+    border-bottom-color: var(--color-highlight);
+}

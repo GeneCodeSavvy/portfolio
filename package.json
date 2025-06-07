@@ -1,0 +1,30 @@
+{
+	"name": "aDevsJournal",
+	"version": "1.0.0",
+	"description": "Personal Portfolio Website",
+	"type": "module",
+	"scripts": {
+		"build:css:main": "postcss src/assets/css/main.css -o _site/assets/css/main.css",
+		"build:css:blog": "postcss src/assets/css/blog.css -o _site/assets/css/blog.css",
+		"build": "rm -rf _site/ && eleventy && pnpm build:css:main && pnpm build:css:blog",
+		"start": "eleventy --serve",
+		"dev": "concurrently \"eleventy --serve\" \"pnpm watch:css\"",
+		"watch:css": "concurrently \"pnpm build:css:main --watch\" \"pnpm build:css:blog --watch\""
+	},
+	"keywords": [],
+	"author": "harshsharma",
+	"license": "ISC",
+	"packageManager": "pnpm@10.11.0",
+	"devDependencies": {
+		"@11ty/eleventy": "^3.1.0",
+		"autoprefixer": "^10.4.21",
+		"concurrently": "^9.1.2",
+		"cssnano": "^7.0.7",
+		"postcss": "^8.5.4",
+		"postcss-cli": "^11.0.1",
+		"postcss-import": "^16.1.0"
+	},
+	"dependencies": {
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1"
+	}
+}

@@ -1,0 +1,144 @@
+---
+layout: base.njk
+title: A Dev's Journal
+description: I talk about Web 3 technologies
+---
+
+<section id="hero">
+  <div class="container">
+    <h3>👋 I'm Harsh Sharma</h3>
+    <h1>- An indie developer building full stack products.</h1>
+    <h4>
+      This site documents my journey: real-world apps, tutorials, code, and
+      honest reflections.
+    </h4>
+    <h4>No flourishes. No filler. Just pure content.</h4>
+    <a href="#blog">👉 Read the blog</a>
+  </div>
+</section>
+<section id="intro">
+  <div class="container">
+    <h2>Who am I?</h2>
+    <p>
+      I'm a self-taught developer building full stack apps and documenting the
+      journey. I care more about finishing things than perfecting them. I learn
+      by doing, so I build every day and ship small tools every week.
+    </p>
+    <p>
+      This site exists so I don't forget what I learn, and maybe help a few
+      others along the way. I write about what I shipped, and what broke.
+    </p>
+    <p>When I'm not online, I'm walking along Aksa Beach here in Mumbai.</p>
+    <a href="#blog">👉 See what I'm building</a>
+  </div>
+</section>
+<!-- <section id="projects">
+  <div class="container">
+    <h2>Latest Projects</h2>
+    <div class="project">
+      <div class="project-content">
+        <h3>Amazing Project Name</h3>
+        <p>
+          Maecenas nec lorem quis sem sodales eleifend. Vestibulum scelerisque
+          augue ut ornare iaculis. Nunc suscipit, nibh eu cursus condimentum,
+          nibh mi pharetra nulla, vel dictum est nibh vel lorem.
+        </p>
+        <div class="project-links">
+          <a href="#" class="project-link">View Project</a>
+          <a href="#" class="source-link">Source Code</a>
+          <a href="#" class="blog-link">Read Blog Post</a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Screenshot of Amazing Project" loading="lazy" />
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-content">
+        <h3>Another Cool Project</h3>
+        <p>
+          Fusce convallis, mi at consequat tempus, justo sem condimentum ipsum,
+          ut volutpat urna augue eu dolor. Vestibulum vel sem ut risus aliquam
+          commodo ut vitae turpis.
+        </p>
+        <div class="project-links">
+          <a href="#" class="project-link">View Project</a>
+          <a href="#" class="source-link">Source Code</a>
+          <a href="#" class="blog-link">Read Blog Post</a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Screenshot of Another Cool Project" loading="lazy" />
+      </div>
+    </div>
+    <div class="project">
+      <div class="project-content">
+        <h3>Something Impressive I Made</h3>
+        <p>
+          Donec pharetra mi et lacus bibendum, in lobortis magna venenatis.
+          Proin tincidunt urna quis magna interdum, sed elementum lacus
+          dignissim.
+        </p>
+        <div class="project-links">
+          <a href="#" class="project-link">View Project</a>
+          <a href="#" class="source-link">Source Code</a>
+          <a href="#" class="blog-link">Read Blog Post</a>
+        </div>
+      </div>
+      <div class="project-image">
+        <img src="https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Screenshot of Something Impressive" loading="lazy" />
+      </div>
+    </div>
+    <p class="view-all">
+      <a href="/projects">All of my projects can be found on my projects page →</a>
+    </p>
+  </div>
+</section> -->
+<section id="blog">
+  <div class="container">
+    <h2>Recent Blog Posts</h2>
+    {%- for post in collections.posts | reverse | slice(0,2) -%}
+    <article class="blog-post-summary">
+      <h3><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+      {% if post.data.description %}
+      <p>{{ post.data.description }}</p>
+      {% endif %}
+      <p><a href="{{ post.url | url }}">Read more →</a></p>
+    </article>
+    {%- else -%}
+    <p>No blog posts yet. Check back soon!</p>
+    {%- endfor -%}
+    <p class="view-all">
+      <a href="/blog/">View all blog posts →</a>
+    </p>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <h2>Get In Touch</h2>
+    <p>
+      Want to work together or have questions? Reach out through any of these
+      channels:
+    </p>
+    <ul class="contact-links">
+      <li>
+        <strong>Email:</strong>
+        <a href="mailto:hsharma.biotech@gmail.com">hsharma.biotech@gmail.com</a>
+      </li>
+      <li>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/thebiotechwords/"
+          >linkedin.com/in/thebiotechwords</a
+        >
+      </li>
+      <li>
+        <strong>X (formerly Twitter):</strong>
+        <a href="https://x.com/ADevsJournal">@ADevsJournal</a>
+      </li>
+      <li>
+        <strong>GitHub:</strong>
+        <a href="https://github.com/GeneCodeSavvy">github.com/GeneCodeSavvy</a>
+      </li>
+    </ul>
+  </div>
+</section>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>{{ title }}</title>
+    <meta name="description" content="{{ description }}" />
+    <meta name="theme-color" content="#121212" />
+    <!-- Favicon (empty placeholder) -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
+    <link
+      rel="manifest"
+      href="/assets/favicon/site.webmanifest"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/assets/favicon/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="/assets/favicon/android-chrome-512x512.png"
+    />
+    <link
+      rel="shortcut icon"
+      href="/assets/favicon/favicon.ico"
+    />
+    <!-- Performance Optimization: Preconnect & Preload -->
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Oswald:400"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- src/_includes/partials/header.njk -->
+    <header id="header">
+      <nav class="navbar">
+        <div class="header-container">
+          <div class="logo">
+            <img
+              height="50"
+              width="50"
+              src="{{ '/assets/favicon/pixil-frame-0.svg' | relativePath: page.url }}"
+              alt="logo"
+            />
+            <a href="#hero">Gene<span>CodeSavvy</span></a>
+          </div>
+
+          <div class="nav-links desktop">
+            <a href="#intro">About Me</a>
+            <a href="#blog">Blog</a>
+            <!-- <a href="#projects">Projects</a> -->
+            <a href="#contact">Contact</a>
+          </div>
+
+          <button
+            id="menu-toggle"
+            class="mobile-menu-button"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            ☰
+          </button>
+        </div>
+
+        <div id="mobile-menu" class="mobile">
+          <a href="#intro">About Me</a>
+          <a href="#blog">Blog</a>
+          <!-- <a href="#projects">Projects</a> -->
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+    <script>
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const menu = document.getElementById("mobile-menu");
+          menu.classList.toggle("active");
+          this.setAttribute(
+            "aria-expanded",
+            menu.classList.contains("active") ? "true" : "false"
+          );
+        });
+      // Add logic to close the menu when a link inside is clicked
+      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+        link.addEventListener("click", function () {
+          // Simulate a click on the menu toggle button
+          document.getElementById("menu-toggle").click();
+        });
+      });
+    </script>
+    <main>
+      {{ content | safe }} {# This is where the content from index.njk (and
+      other pages) will be injected #}
+    </main>
+    <footer id="page-footer">
+      <div class="footer-content">
+        <p>
+          Inspired by
+          <span
+            ><a href="http://bettermotherfuckingwebsite.com/"
+              >this perfect website</a
+            ></span
+          >, which I deeply admire.
+        </p>
+        <br />
+        <p>Created with <a href="https://www.11ty.dev/">11ty</a>.</p>
+      </div>
+      <a href="#header" id="back-to-top" title="Back to top"
+        >&uarr; <span class="back-to-top-text">Back to the top</span></a
+      >
+    </footer>
+    <script>
+      // Back to top button logic
+      const backToTopButton = document.getElementById("back-to-top");
+      // Show button when user scrolls down 200px
+      const scrollThreshold = 200;
+
+      if (backToTopButton) {
+        window.onscroll = function () {
+          if (
+            document.body.scrollTop > scrollThreshold ||
+            document.documentElement.scrollTop > scrollThreshold
+          ) {
+            backToTopButton.style.display = "block";
+            // backToTopButton.style.alignItems = "flex-end";
+            document.getElementsByClassName(
+              "back-to-top-text"
+            )[0].style.paddingLeft = "5px";
+          } else {
+            backToTopButton.style.display = "none";
+          }
+        };
+
+        backToTopButton.addEventListener("click", function (e) {
+          // Check if the href is just a fragment identifier for the current page
+          if (this.pathname === window.location.pathname && this.hash !== "") {
+            e.preventDefault(); // Prevent default anchor behavior only for on-page links
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }
+          // For external links or different pages, let the default behavior occur
+        });
+      }
+    </script>
+  </body>
+</html>

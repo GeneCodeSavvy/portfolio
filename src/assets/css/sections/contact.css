@@ -1,0 +1,9 @@
+/* Contact */
+.contact-links {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.contact-links li {
+    margin-bottom: var(--spacing-sm);
+}
