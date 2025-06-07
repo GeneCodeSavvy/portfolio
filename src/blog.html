@@ -1,0 +1,34 @@
+---
+layout: base.njk
+title: Blog
+description: My blogs
+---
+
+<section id="all-blogs-page">
+    <div class="container">
+        <h1>Blog List</h1>
+        {%- if collections.posts and collections.posts.length > 0 -%}
+            <ul class="blog-list">
+            {%- for post in collections.posts | reverse -%}
+                <li class="blog-post-item">
+                    <article class="blog-post-summary">
+                        <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+                        {% if post.data.date %}
+                            <p class="post-meta">
+                                Published on: <time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>
+                            </p>
+                        {% endif %}
+                        {% if post.data.description %}
+                            <p>{{ post.data.description }}</p>
+                        {% endif %}
+                        <p><a href="{{ post.url | url }}">Read more →</a></p>
+                    </article>
+                </li>
+            {%- endfor -%}
+            </ul>
+        {%- else -%}
+        <div>test</div>
+            <p>No blog posts yet. Check back soon!</p>
+        {%- endif -%}
+    </div>
+</section>
