@@ -96,9 +96,10 @@ description: I talk about Web 3 technologies
 <section id="blog">
   <div class="container">
     <h2>Recent Blog Posts</h2>
-    {%- for post in collections.posts -%}
+    {%- for posts in collections.posts | slice(2) -%}
+    {%- for post in posts -%}
     <article class="blog-post-summary">
-      <h3 class="post-title"><a href="{{ post.url | url }}">{{ post.data.title }}</a></h3>
+      <h3 class="post-title">{{ post.data.title }}</h3>
       <h4 class="post-subtitle">{{ post.data.subtitle }}</h4>
       {% if post.data.description %}
       <p class="post-description">{{ post.data.description }}</p>
@@ -107,6 +108,7 @@ description: I talk about Web 3 technologies
     </article>
     {%- else -%}
     <p>No blog posts yet. Check back soon!</p>
+    {%- endfor -%}
     {%- endfor -%}
     <p class="view-all">
       <a href="{{ '/blog/' | url }}">View all blog posts →</a>

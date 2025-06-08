@@ -92,9 +92,13 @@ h3 {
     margin-bottom: var(--spacing-sm);
 }
 
+h4 {
+    font-size: 1.15rem;
+}
+
 p, ul, ol {
     font-size: var(--font-size-base);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
     max-width: 90ch;
 }
 
