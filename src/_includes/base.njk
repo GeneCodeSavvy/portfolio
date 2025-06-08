@@ -3,6 +3,7 @@
     <head>
         <!-- Basic Meta Tags -->
         <meta charset="UTF-8" />
+        <meta name="generator" content="{{ eleventy.generator }}">
         <meta name="viewport"
               content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
         <title>{{ title }}</title>
@@ -31,8 +32,9 @@
               href="/assets/favicon/android-chrome-512x512.png" />
         <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
         <!-- Performance Optimization: Preconnect & Preload -->
-        <link rel="stylesheet"
-              href="/assets/css/main.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-material-oceanic.min.css"
+              rel="stylesheet" />
+        <link rel="stylesheet" href="/assets/css/main.css">
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;600&display=swap"
@@ -54,13 +56,13 @@
                              width="50"
                              src="/assets/favicon/pixil-frame-0.svg"
                              alt="logo" />
-                        <a href="#hero">Gene<span>CodeSavvy</span></a>
+                        <a href="/#hero">Gene<span>CodeSavvy</span></a>
                     </div>
                     <div class="nav-links desktop">
-                        <a href="#intro">About Me</a>
-                        <a href="#blog">Blog</a>
-                        <!-- <a href="#projects">Projects</a> -->
-                        <a href="#contact">Contact</a>
+                        <a href="/#intro">About Me</a>
+                        <a href="/#blog">Blog</a>
+                        <!-- <a href="/#projects">Projects</a> -->
+                        <a href="/#contact">Contact</a>
                     </div>
                     <button id="menu-toggle"
                             class="mobile-menu-button"
@@ -68,10 +70,10 @@
                             aria-expanded="false">☰</button>
                 </div>
                 <div id="mobile-menu" class="mobile">
-                    <a href="#intro">About Me</a>
-                    <a href="#blog">Blog</a>
-                    <!-- <a href="#projects">Projects</a> -->
-                    <a href="#contact">Contact</a>
+                    <a href="/#intro">About Me</a>
+                    <a href="/#blog">Blog</a>
+                    <!-- <a href="/#projects">Projects</a> -->
+                    <a href="/#contact">Contact</a>
                 </div>
             </nav>
         </header>
@@ -87,7 +89,7 @@
           );
         });
       // Add logic to close the menu when a link inside is clicked
-      document.querySelectorAll("#mobile-menu a").forEach((link) => {
+      document.querySelectorAll("/#mobile-menu a").forEach((link) => {
         link.addEventListener("click", function () {
           // Simulate a click on the menu toggle button
           document.getElementById("menu-toggle").click();
@@ -106,10 +108,10 @@
                 </p>
                 <br />
                 <p>
-                    Created with <a href="https://www.11ty.dev/">11ty</a>.
+                    Powered by <a href="https://www.11ty.dev/">11ty</a>.
                 </p>
             </div>
-            <a href="#header" id="back-to-top" title="Back to top">&uarr; <span class="back-to-top-text">Back to the top</span></a>
+            <a href="/#header" id="back-to-top" title="Back to top">&uarr; <span class="back-to-top-text">Back to the top</span></a>
         </footer>
         <script>
       // Back to top button logic

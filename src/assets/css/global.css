@@ -7,7 +7,7 @@
     --merriweather: "Merriweather", sans-serif;
 
     /* Font Sizes */
-    --font-size-base: 1.15rem;
+    --font-size-base: 1.0625rem;
     --line-height: 1.6;
 
     /* Colors (Dark Mode Palette) */
@@ -63,6 +63,7 @@ body {
     background-color: var(--color-primary);
     line-height: var(--line-height);
     color: var(--color-text);
+    min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -93,7 +94,7 @@ h3 {
 
 p, ul, ol {
     font-size: var(--font-size-base);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     max-width: 90ch;
 }
 
@@ -117,6 +118,7 @@ main {
     margin: 5rem auto 0;
     max-width: 1000px;
     padding: var(--spacing-md);
+    flex-grow: 1;
 }
 
 .container {
