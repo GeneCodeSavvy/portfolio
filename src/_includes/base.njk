@@ -47,36 +47,6 @@
               rel="stylesheet" />
     </head>
     <body>
-        <!-- src/_includes/partials/header.njk -->
-        <header id="header">
-            <nav class="navbar">
-                <div class="header-container">
-                    <div class="logo">
-                        <img height="50"
-                             width="50"
-                             src="/assets/favicon/pixil-frame-0.svg"
-                             alt="logo" />
-                        <a href="/#hero">Gene<span>CodeSavvy</span></a>
-                    </div>
-                    <div class="nav-links desktop">
-                        <a href="/#intro">About Me</a>
-                        <a href="/#blog">Blog</a>
-                        <!-- <a href="/#projects">Projects</a> -->
-                        <a href="/#contact">Contact</a>
-                    </div>
-                    <button id="menu-toggle"
-                            class="mobile-menu-button"
-                            aria-label="Toggle menu"
-                            aria-expanded="false">☰</button>
-                </div>
-                <div id="mobile-menu" class="mobile">
-                    <a href="/#intro">About Me</a>
-                    <a href="/#blog">Blog</a>
-                    <!-- <a href="/#projects">Projects</a> -->
-                    <a href="/#contact">Contact</a>
-                </div>
-            </nav>
-        </header>
         <script>
       document
         .getElementById("menu-toggle")
@@ -100,53 +70,40 @@
             {{ content | safe }} {# This is where the content from index.njk (and
       other pages) will be injected #}
         </main>
-        <footer id="page-footer">
-            <div class="footer-content">
-                <p>
-                    Inspired by
-                    <span><a href="http://bettermotherfuckingwebsite.com/">this perfect website</a></span>, which I deeply admire.
-                </p>
-                <br />
-                <p>
-                    Powered by <a href="https://www.11ty.dev/">11ty</a>.
-                </p>
-            </div>
-            <a href="/#header" id="back-to-top" title="Back to top">&uarr; <span class="back-to-top-text">Back to the top</span></a>
-        </footer>
         <script>
-      // Back to top button logic
-      const backToTopButton = document.getElementById("back-to-top");
-      // Show button when user scrolls down 200px
-      const scrollThreshold = 200;
+            // Back to top button logic
+            const backToTopButton = document.getElementById("back-to-top");
+            // Show button when user scrolls down 200px
+            const scrollThreshold = 200;
 
-      if (backToTopButton) {
-        window.onscroll = function () {
-          if (
-            document.body.scrollTop > scrollThreshold ||
-            document.documentElement.scrollTop > scrollThreshold
-          ) {
-            backToTopButton.style.display = "block";
-            // backToTopButton.style.alignItems = "flex-end";
-            document.getElementsByClassName(
-              "back-to-top-text"
-            )[0].style.paddingLeft = "5px";
-          } else {
-            backToTopButton.style.display = "none";
-          }
-        };
+            if (backToTopButton) {
+              window.onscroll = function () {
+                if (
+                  document.body.scrollTop > scrollThreshold ||
+                  document.documentElement.scrollTop > scrollThreshold
+                ) {
+                  backToTopButton.style.display = "block";
+                  // backToTopButton.style.alignItems = "flex-end";
+                  document.getElementsByClassName(
+                    "back-to-top-text"
+                  )[0].style.paddingLeft = "5px";
+                } else {
+                  backToTopButton.style.display = "none";
+                }
+              };
 
-        backToTopButton.addEventListener("click", function (e) {
-          // Check if the href is just a fragment identifier for the current page
-          if (this.pathname === window.location.pathname && this.hash !== "") {
-            e.preventDefault(); // Prevent default anchor behavior only for on-page links
-            window.scrollTo({
-              top: 0,
-              behavior: "smooth",
-            });
-          }
-          // For external links or different pages, let the default behavior occur
-        });
-      }
+              backToTopButton.addEventListener("click", function (e) {
+                // Check if the href is just a fragment identifier for the current page
+                if (this.pathname === window.location.pathname && this.hash !== "") {
+                  e.preventDefault(); // Prevent default anchor behavior only for on-page links
+                  window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                  });
+                }
+                // For external links or different pages, let the default behavior occur
+              });
+            }
         </script>
     </body>
 </html>

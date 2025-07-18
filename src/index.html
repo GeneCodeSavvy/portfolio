@@ -3,6 +3,24 @@ layout: base.njk
 title: A Dev's Journal
 description: I talk about Web 3 technologies
 ---
+<!-- src/_includes/partials/header.njk -->
+<header id="header">
+  <nav class="navbar">
+    <div class="header-container">
+      <div class="nav-links desktop">
+        <a href="/#intro">About Me</a>
+        <a href="/#blog">Blog</a>
+        <a href="/#contact">Contact</a>
+      </div>
+      <button id="menu-toggle" class="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
+    <div id="mobile-menu" class="mobile">
+      <a href="/#intro">About Me</a>
+      <a href="/#blog">Blog</a>
+      <a href="/#contact">Contact</a>
+    </div>
+  </nav>
+</header>
 <section id="hero">
   <div class="container">
     <h3>👋 I'm Harsh Sharma</h3>
@@ -12,7 +30,10 @@ description: I talk about Web 3 technologies
       honest reflections.
     </h4>
     <h4>No flourishes. No filler. Just pure content.</h4>
-    <a href="#blog">👉 Read the blog</a>
+    <a href="#blog"> Read the blog</a>
+  </div>
+  <div class="image-container">
+    <img src="assets/favicon/pixil-frame-0.svg" alt="Branding Image" height="200px" width="200px">
   </div>
 </section>
 <section id="intro">
@@ -20,7 +41,8 @@ description: I talk about Web 3 technologies
     <h2>Who am I ?</h2>
     <p>
       I'm a self-taught developer building full stack apps and documenting the
-      journey. I care more about finishing things than perfecting them. I learn
+      journey.<br>
+      I care more about finishing things than perfecting them. I learn
       by doing, so I build every day and ship small tools every week.
     </p>
     <p>
@@ -28,7 +50,7 @@ description: I talk about Web 3 technologies
       others along the way. I write about what I shipped, and what broke.
     </p>
     <p>When I'm not online, I'm walking along Aksa Beach here in Mumbai.</p>
-    <a href="#blog">👉 See what I'm building</a>
+    <a href="#blog"> See what I'm building</a>
   </div>
 </section>
 <!-- <section id="projects">
