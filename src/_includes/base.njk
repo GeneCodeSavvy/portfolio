@@ -66,6 +66,27 @@
         });
       });
         </script>
+        <header id="header">
+            <nav class="navbar">
+                <div class="header-container">
+                    <div class="nav-links desktop">
+                        <a href="/#hero">Home</a>
+                        <a href="/#intro">About Me</a>
+                        <a href="/#blog">Blog</a>
+                        <a href="/#contact">Contact</a>
+                    </div>
+                    <button id="menu-toggle"
+                            class="mobile-menu-button"
+                            aria-label="Toggle menu"
+                            aria-expanded="false">☰</button>
+                </div>
+                <div id="mobile-menu" class="mobile">
+                    <a href="/#intro">About Me</a>
+                    <a href="/#blog">Blog</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </nav>
+        </header>
         <main>
             {{ content | safe }} {# This is where the content from index.njk (and
       other pages) will be injected #}
