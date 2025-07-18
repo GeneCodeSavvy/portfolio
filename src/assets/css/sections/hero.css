@@ -18,3 +18,9 @@
 #hero h4 {
     font-style: italic;
 }
+
+@media (max-width: 768px) {
+  .image-container {
+    display: none;
+  }
+}
