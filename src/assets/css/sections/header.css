@@ -44,43 +44,6 @@
     /* Add this line */
 }
 
-/* Mobile menu button */
-.mobile-menu-button {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text-color);
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: var(--spacing-xs);
-}
-
-#mobile-menu {
-    display: none;
-    flex-direction: column;
-    background-color: hsl(from var(--color-secondary) h s l / 0.95);
-    /* More opaque for legibility */
-    border-top: 1px solid hsl(from var(--color-accent) h s l / 0.2);
-    /* Consistent with header border */
-}
-
-#mobile-menu a {
-    color: var(--text-color);
-    text-decoration: none;
-    padding: var(--spacing-sm);
-    border-bottom: 1px solid hsl(from var(--color-accent) h s l / 0.2);
-    /* Consistent with header border */
-}
-
-#mobile-menu a:last-child {
-    border-bottom: none;
-}
-
-/* When menu is active */
-#mobile-menu.active {
-    display: flex;
-}
-
 /* Perfect scroll */
 section[id] {
     scroll-margin-top: 120px;
@@ -88,22 +51,6 @@ section[id] {
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .desktop {
-        display: none;
-    }
-
-    .mobile-menu-button {
-        display: block;
-        margin-left: auto;
-    }
-
-    .logo img {
-        display: none;
-    }
-
-    .logo a {
-        font-size: 1.3rem;
-    }
 
     section[id] {
         scroll-margin-top: 90px;
