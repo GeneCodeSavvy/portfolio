@@ -1,5 +1,6 @@
 :root {
     /* Font Families */
+    --bricolage: 'bricolage Grotesque', sans-serif;
     --playfair-display: "Playfair Display", serif;
     --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
     --droid-serif: "Droid Serif", serif;
@@ -15,7 +16,7 @@
     /* Base background */
     --color-secondary: #2A3655;
     /* Surfaces, containers */
-    --color-accent: #DB0042;
+    --color-accent: #ff6666;
     /* Interactive, hover, links */
     --color-highlight: #F4B400;
     /* CTA, alert, emphasis */
@@ -117,13 +118,7 @@ a {
     color: var(--color-accent);
     text-decoration: none;
     padding-bottom: 2px;
-    border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-bottom-color 0.2s;
-}
-
-a:hover {
-    color: var(--color-highlight);
-    border-bottom-color: var(--color-highlight);
+    transition: color 0.2s;
 }
 
 main {

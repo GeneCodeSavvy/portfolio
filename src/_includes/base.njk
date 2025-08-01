@@ -45,29 +45,90 @@
               rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic|Oswald:400"
               rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+              rel="stylesheet">
     </head>
     <body>
-        <script>
-      document
-        .getElementById("menu-toggle")
-        .addEventListener("click", function () {
-          const menu = document.getElementById("mobile-menu");
-          menu.classList.toggle("active");
-          this.setAttribute(
-            "aria-expanded",
-            menu.classList.contains("active") ? "true" : "false"
-          );
-        });
-      });
-        </script>
         <header id="header">
             <nav class="navbar">
                 <div class="header-container">
+                    <a href="/" class="logo">
+                        <span class="logo-text">Harsh Sharma</span>
+                    </a>
+                    <button class="menu-toggle"
+                            id="mobile-menu"
+                            aria-label="Open navigation menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
                     <div class="nav-links">
-                        <a href="/#hero">Home</a>
-                        <a href="/#intro">About Me</a>
-                        <a href="/#blog">Blog</a>
-                        <a href="/#contact">Contact</a>
+                        <a href="/#intro">
+                            <svg class="nav-icon"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span>About Me</span>
+                        </a>
+                        <a href="/blog/">
+                            <svg class="nav-icon"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            <span>Blog</span>
+                        </a>
+                        <a href="https://github.com/GeneCodeSavvy"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg class="nav-icon"
+                                 xmlns="http://www.w3.org/2000/svg"
+                                 width="24"
+                                 height="24"
+                                 viewBox="0 0 24 24"
+                                 fill="none"
+                                 stroke="currentColor"
+                                 stroke-width="2"
+                                 stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://x.com/intent/follow?screen_name=ADevsJournal"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg stroke="currentColor"
+                                 fill="currentColor"
+                                 stroke-width="0"
+                                 viewBox="0 0 512 512"
+                                 class="w-[17px] h-[17px] max-sm:w-[15px] max-sm:h-[15px] text-black dark:text-white"
+                                 height="1em"
+                                 width="1em"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z">
+                                </path>
+                            </svg>
+                            <span>X</span>
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -108,6 +169,16 @@
                   });
                 }
                 // For external links or different pages, let the default behavior occur
+              });
+            }
+
+            const mobileMenu = document.getElementById('mobile-menu');
+            const headerContainer = document.querySelector('.header-container');
+
+            if (mobileMenu && headerContainer) {
+              mobileMenu.addEventListener('click', () => {
+                headerContainer.classList.toggle('menu-open');
+                mobileMenu.classList.toggle('is-active');
               });
             }
         </script>

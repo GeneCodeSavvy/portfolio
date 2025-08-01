@@ -33,13 +33,12 @@
     text-decoration: none;
     color: var(--color-accent);
     border-bottom: 1px solid transparent;
-    transition: color 0.2s, border-bottom-color 0.2s;
+    transition: color 0.2s;
 }
 .project-link:hover,
 .source-link:hover,
 .blog-link:hover {
     color: var(--color-highlight);
-    border-bottom-color: var(--color-highlight);
 }
 .project-image {
     position: relative;
