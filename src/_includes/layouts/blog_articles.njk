@@ -5,38 +5,14 @@ layout: base.njk
 <article class="post">
     <header class="post-header">
         <h1>{{ title }}</h1>
-        {% if page.date %}
-            <p class="post-meta">
-                Published on:
-                <time datetime="{{ page.date }}">{{ page.date }}</time>
-                {#
-        Note: Ensure you have 'readableDate' and 'dateISO' filters set up in your Eleventy config (eleventy.config.js).
-        Example for eleventy.config.js:
-        const { DateTime } = require("luxon");
-        eleventyConfig.addFilter("readableDate", dateObj => {
-          return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
-        });
-        eleventyConfig.addFilter('dateISO', dateObj => {
-          return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toISO();
-        });
-        
-        Alternatively, if you don't have custom filters, you can use Nunjucks' built-in date filter:
-        <time datetime="{{ page.date | date }}">{{ page.date | date('MMMM d, YYYY') }}</time>
-        Or, if page.date is already a pre-formatted string, simply output {{ page.date }}.
-      #}
-            </p>
-        {% endif %}
-        {% if description %}<p class="post-description">{{ description }}</p>{% endif %}
     </header>
     <section class="post-body">
         {{ content | safe }}
     </section>
-    {# Previous/Next post navigation #}
-    {% set posts = collections.posts %} {# Assumes your blog posts are in the 'posts' collection as per your src/blog/blog.json #}
+    {% set posts = collections.posts %}
     {% if posts and posts.length > 1 %}
         {% set currentPostUrl = page.url %}
         {% set currentIndex = -1 %}
-        {# Find the current post's index in the collection #}
         {% for post in posts %}
             {% if post.url == currentPostUrl %}
                 {% set currentIndex = loop.index0 %}
@@ -48,7 +24,6 @@ layout: base.njk
         {% if previousPost or nextPost %}
             <nav class="post-navigation" aria-label="Blog post navigation">
                 <ul class="post-navigation-list">
-                    {# You can style this list using CSS #}
                     <li class="post-navigation-item post-navigation-previous">
                         {% if previousPost %}
                             <a href="{{ previousPost.url | url }}" rel="prev">&laquo; Previous: {{ previousPost.data.title }}</a>
