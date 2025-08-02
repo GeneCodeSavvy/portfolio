@@ -2,6 +2,7 @@
 title: Getting Started with RDF 
 subtitle: Concepts, and Real-World Examples
 description: Ever wondered how information on the web becomes interconnected in a machine-readable way? Enter the Resource Description Framework (RDF) a powerful, graph-based model that structures knowledge using simple yet expressive triples, Subject – Predicate - Object. Whether you're exploring how global identifiers like IRIs work, understanding blank nodes, or diving into real-world RDF/XML examples, this guide breaks it all down in clear, digestible terms. Curious how “Harsh is learning RDF” becomes part of a web of linked data?
+date: 2025-06-27T17:46:01+0530
 ---
 
 

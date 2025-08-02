@@ -1,13 +1,12 @@
 ---
-title: SBOL Specification
+title: Intro to SBOL Specification
 subtitle: A brief disscussion
 description: Designing synthetic biology systems is challenging due to poor standardization and lack of machine-readable formats. SBOL3 addresses this by using RDF to represent biological designs in a structured, semantic format. It supports modular design, provenance tracking, and interoperability. Tools like pySBOL3 make it easy to create and serialize these designs. RDF triples (subject–predicate–object) form the backbone of this data model.
 author: harshsharma
 categories: 
   - Google Summer of Code
   - Synthetic Biology
-created: 2025-05-31T16:46:03+0530
-updated: 2025-06-08T17:46:01+0530
+date: 2025-06-08T17:46:01+0530
 version: 1.1.1
 ---
 
