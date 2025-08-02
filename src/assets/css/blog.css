@@ -1,3 +1,90 @@
 @import url("global.css");
 @import url("sections/header.css");
-@import url("sections/footer.css");
+
+#all-blogs-page .container h1 {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.8rem;
+    color: var(--color-highlight);
+}
+
+.blog-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.blog-post-item {
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-post-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-post-summary h2 {
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.blog-post-summary h2 a {
+    color: var(--color-text);
+    transition: color 0.2s ease;
+}
+
+.blog-post-summary h2 a:hover {
+    color: var(--color-accent);
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-sans);
+}
+
+.blog-post-summary p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+    font-family: var(--font-serif);
+}
+
+.read-more-link {
+    display: inline-block;
+    color: var(--color-highlight);
+    font-weight: bold;
+    font-family: var(--font-sans);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: 1px solid var(--color-highlight);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-link:hover {
+    background-color: var(--color-highlight);
+    color: var(--color-primary);
+}
+
+.no-posts-message {
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-secondary);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+}
+
+.no-posts-message p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-muted);
+}
