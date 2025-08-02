@@ -25,6 +25,7 @@
 		"postcss-import": "^16.1.0"
 	},
 	"dependencies": {
-		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1"
+		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+		"luxon": "^3.7.1"
 	}
 }

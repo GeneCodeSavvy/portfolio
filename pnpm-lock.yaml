@@ -11,6 +11,9 @@ importers:
       '@11ty/eleventy-plugin-syntaxhighlight':
         specifier: ^5.0.1
         version: 5.0.1
+      luxon:
+        specifier: ^3.7.1
+        version: 3.7.1
     devDependencies:
       '@11ty/eleventy':
         specifier: ^3.1.0
@@ -548,8 +551,8 @@ packages:
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
-  luxon@3.6.1:
-    resolution: {integrity: sha512-tJLxrKJhO2ukZ5z0gyjY1zPh3Rh88Ej9P7jNrZiHMUXHae1yvI2imgOZtL1TO8TW6biMMKfTtAOoEJANgtWBMQ==}
+  luxon@3.7.1:
+    resolution: {integrity: sha512-RkRWjA926cTvz5rAb1BqyWkKbbjzCGchDUIKMCUvNi17j6f6j8uHGDV82Aqcqtzd+icoYpELmG3ksgGiFNNcNg==}
     engines: {node: '>=12'}
 
   markdown-it@14.1.0:
@@ -1163,7 +1166,7 @@ snapshots:
       js-yaml: 4.1.0
       kleur: 4.1.5
       liquidjs: 10.21.1
-      luxon: 3.6.1
+      luxon: 3.7.1
       markdown-it: 14.1.0
       minimist: 1.2.8
       moo: 0.5.2
@@ -1657,7 +1660,7 @@ snapshots:
 
   lodash@4.17.21: {}
 
-  luxon@3.6.1: {}
+  luxon@3.7.1: {}
 
   markdown-it@14.1.0:
     dependencies:
