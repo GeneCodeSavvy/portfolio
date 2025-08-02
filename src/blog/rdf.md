@@ -95,8 +95,3 @@ xmlns:schema="http://schema.org/">
 
 </rdf:RDF>
 ```
-
-
-## REFERENCES:
-
-- [RDF 1.1 Primer](https://www.w3.org/TR/rdf-primer/)
