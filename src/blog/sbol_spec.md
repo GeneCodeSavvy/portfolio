@@ -15,17 +15,8 @@ version: 1.1.1
 ### Challenges in Designing Systems in Synthetic Biology.
 
 Synthetic Biology draws from multiple fields, including Genetics, Molecular Biology, and Metabolic Engineering. However, tools from these areas are not always directly applicable. Designing synthetic systems requires integrating diverse information, but the absence of standardized solutions leads to low reproducibility and high failure rates.
-For example:
-- FASTA encodes little beyond sequence data.
-- GenBank and Swiss-Prot offer more sequence feature details than FASTA but are not suited for layered designs typical in engineering.
-- Systems Biology Markup Language (SBML) represents biological processes well but lacks support for associated nucleotide and amino acid sequences.
 
-
-#### TLDR
-
-- lack of a robust, machine-readable format capturing the specific needs of Synthetic Biology.
-- lack of streamlined workflows for the "Design-Build-Test-Learn" cycle.
-
+For example, existing formats have limitations. FASTA encodes little beyond sequence data, while GenBank and Swiss-Prot, despite offering more sequence feature details, are not suited for the layered designs typical in engineering. Similarly, the Systems Biology Markup Language (SBML) represents biological processes well but lacks support for associated nucleotide and amino acid sequences. These issues highlight the lack of a robust, machine-readable format that captures the specific needs of Synthetic Biology and the absence of streamlined workflows for the "Design-Build-Test-Learn" cycle.
 
 
 ### Overview of Synthetic Biology Open Language (SBOL).
@@ -37,10 +28,7 @@ SBOL3 is the latest version of the SBOL standard as of 2025. We can create SBOL3
 ```bash
 pip3 install sbol3
 ```
-Terminologies
-1. Namespace: A unique identifier assigned to your SBOL document that distinguishes its components from those in other documents. It ensures all elements are uniquely identifiable, supporting data exchange and interoperability.
-2. Objects: Fundamental building blocks in SBOL used to represent structural or functional elements of a design. For instance, a Sequence object defines a nucleotide or protein sequence.
-3. Provenance: Metadata describing the origin, authorship, and modification history of an SBOL document, useful for tracking design evolution and ownership.
+Before we proceed, it's helpful to understand a few key terminologies. A **Namespace** is a unique identifier for an SBOL document, ensuring its components are distinguishable from those in other documents to support data exchange. The fundamental building blocks in SBOL are **Objects**, which represent structural or functional elements of a design, such as a Sequence object defining a nucleotide or protein sequence. Finally, **Provenance** refers to metadata that describes the origin, authorship, and modification history of an SBOL document, which is useful for tracking a design's evolution and ownership.
 
 
 ### Creating basic SBOL3 Objects:
@@ -107,30 +95,11 @@ pySBOL3 supports multiple output formats, including RDF/XML, Turtle, Triples, an
 
 The XML block shown above is the serialized RDF representation of the SBOL3 document. It follows the RDF/XML syntax, which is a standard format for expressing RDF data in XML.
 
-Short description about the tags found in our SBOL3 document.
-1. `<rdf:RDF>`  
-   This is the root element of any RDF/XML document. It declares the namespaces used throughout the file.  
-    - `xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"` tells the parser we are using RDF syntax.
-    - `xmlns:sbol="http://sbols.org/v3#"` indicates that tags prefixed with `sbol:` come from the SBOL vocabulary.
-2. `<rdf:Description>`  
-   This tag describes a resource
-3. `<sbol:displayId>`  
-   This is a human-readable identifier from the SBOL vocabulary. It assigns a name to the SBOL object.
-4. `<rdf:type>`  
-   This tag defines what type of object the resource is. It links the resource to a class in an ontology.  
-    - For the DNA component: `<rdf:type rdf:resource="http://sbols.org/v3#Component"/>`  
-    - For the sequence: `<rdf:type rdf:resource="http://sbols.org/v3#Sequence"/>`
-5. `<sbol:hasNamespace>`  
-   Indicates the namespace to which the object belongs. This ensures every object has a globally unique IRI. It helps tools differentiate between identically named components across documents.
-6. `<sbol:type>`  
-   Provides a semantic category for the Component using the Systems Biology Ontology (SBO).  
-    - In this example, the SBO term `SBO:0000251` denotes a DNA molecule.
-7. `<sbol:hasSequence>`  
-   Establishes a link from the Component to its associated Sequence. It uses the IRI of the Sequence object as its value.
-8. `<sbol:elements>`  
-   This is a literal property containing the actual sequence string, such as "atgctagctagctacgtagctagctgact". It encodes the nucleotides or amino acids.
-9. `<sbol:encoding>`  
-   Specifies the format of the sequence data. The IRI points to a standard term (in this case, EDAM format) to indicate it’s DNA encoded using IUPAC notation.
+Let's break down the tags found in our SBOL3 document. The root element is `<rdf:RDF>`, which declares the necessary namespaces, such as `xmlns:rdf` for RDF syntax and `xmlns:sbol` for the SBOL vocabulary. Within this, `<rdf:Description>` is used to describe a resource. Each resource has properties, like `<sbol:displayId>`, a human-readable identifier that assigns a name to the SBOL object.
+
+The `<rdf:type>` tag is crucial as it defines the object's type by linking it to a class in an ontology, for example, specifying a resource as an `sbol:Component` or `sbol:Sequence`. To ensure every object has a globally unique IRI, `<sbol:hasNamespace>` indicates the namespace to which the object belongs, helping tools differentiate between identically named components across documents. Further semantic categorization is provided by `<sbol:type>`, which uses the Systems Biology Ontology (SBO) to classify a component, such as using `SBO:0000251` to denote a DNA molecule.
+
+Relationships between resources are also defined. For instance, `<sbol:hasSequence>` establishes a link from a Component to its associated Sequence using the Sequence's IRI. The actual sequence data is contained within the `<sbol:elements>` tag as a literal string. Finally, `<sbol:encoding>` specifies the format of the sequence data, pointing to a standard term like the EDAM format for DNA encoded with IUPAC notation.
 
 
 ### Triples in SBOL
@@ -141,29 +110,21 @@ Each triple represents a single piece of information. Let’s apply this to our 
 
 #### Example Triple from the SBOL Document
 
+Consider the following XML snippet:
 ```xml
 <rdf:Description rdf:about="https://example@edu/lab_name/design_name/example_dna">
     <sbol:displayId>example_dna</sbol:displayId>
 </rdf:Description>
 ```
-This can be read as:
-- **Subject**: `https://example@edu/lab_name/design_name/example_dna`  
-  → the resource we are describing (a DNA component)
-- **Predicate**: `sbol:displayId`  
-  → the property or relationship (what we want to say about the subject)
-- **Object**: `"example_dna"`  
-  → the value assigned to that property
-  RDF allows expressing many such triples, creating a graph-like structure where each node (resource) can have multiple outgoing relationships (predicates) pointing to other nodes (objects) or literal values.
+This snippet can be read as a triple. The **Subject** is `https://example@edu/lab_name/design_name/example_dna`, which is the resource being described (a DNA component). The **Predicate** is `sbol:displayId`, representing the property or relationship. The **Object** is `"example_dna"`, which is the value assigned to that property. RDF allows expressing many such triples, creating a graph-like structure where each node (resource) can have multiple outgoing relationships (predicates) pointing to other nodes (objects) or literal values.
 
+As another example:
 ```xml
 <rdf:Description rdf:about="https://example@edu/lab_name/design_name/example_dna">
     <rdf:type rdf:resource="http://sbols.org/v3#Component"/>
 </rdf:Description>
 ```
-- **Subject**: `https://example@edu/lab_name/design_name/example_dna` (implicit from the enclosing `<rdf:Description>`)
-- **Predicate**: `rdf:type`
-- **Object**: `http://sbols.org/v3#Component`
-  This tells us that the subject is a `Component`.
+Here, the **Subject** is again `https://example@edu/lab_name/design_name/example_dna`, which is implicit from the enclosing `<rdf:Description>`. The **Predicate** is `rdf:type`, and the **Object** is `http://sbols.org/v3#Component`. This triple tells us that the subject is a `Component`.
 
 
 ### Conclusion
