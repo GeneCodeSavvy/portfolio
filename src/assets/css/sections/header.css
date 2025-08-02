@@ -44,7 +44,7 @@
 }
 
 .logo-text {
-    font-family: var(--plus-jakarta-sans);
+    font-family: var(--font-sans);
     font-size: 1.25rem;
     font-weight: 600;
     letter-spacing: -0.5px;
@@ -104,7 +104,7 @@
     gap: var(--spacing-xs);
     text-decoration: none;
     color: var(--color-text-secondary);
-    font-family: var(--plus-jakarta-sans);
+    font-family: var(--font-sans);
     font-size: 1rem;
     font-weight: 500;
     position: relative;

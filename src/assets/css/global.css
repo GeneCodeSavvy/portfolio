@@ -1,11 +1,7 @@
 :root {
     /* Font Families */
-    --bricolage: 'bricolage Grotesque', sans-serif;
-    --playfair-display: "Playfair Display", serif;
-    --plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
-    --droid-serif: "Droid Serif", serif;
-    --oswald: "Oswald", sans-serif;
-    --merriweather: "Merriweather", sans-serif;
+    --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+    --font-serif: "Merriweather", Georgia, serif;
 
     /* Font Sizes */
     --font-size-base: 18px;
@@ -76,7 +72,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-sans);
     line-height: 1.2;
     margin-bottom: var(--spacing-sm);
     color: var(--color-text);
@@ -114,7 +110,7 @@ ol {
 }
 
 .container p {
-    font-family: var(--merriweather);
+    font-family: var(--font-serif);
 }
 
 a {
