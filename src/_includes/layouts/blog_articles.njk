@@ -27,11 +27,15 @@ layout: base.njk
                 <ul class="post-navigation-list">
                     <li class="post-navigation-item post-navigation-previous">
                         {% if previousPost %}
-                            <a href="{{ previousPost.url | url }}" rel="prev">&laquo; Previous: {{ previousPost.data.title }}</a>
+                            <span>Previous: &nbsp</span>
+                            <a href="{{ previousPost.url | url }}" rel="prev">{{ previousPost.data.title }}</a>
                         {% endif %}
                     </li>
                     <li class="post-navigation-item post-navigation-next">
-                        {% if nextPost %}<a href="{{ nextPost.url | url }}" rel="next">Next: {{ nextPost.data.title }} &raquo;</a>{% endif %}
+                        {% if nextPost %}
+                            <span>Next: &nbsp</span>
+                            <a href="{{ nextPost.url | url }}" rel="next">{{ nextPost.data.title }}</a>
+                        {% endif %}
                     </li>
                 </ul>
             </nav>
