@@ -6,7 +6,7 @@ author: harshsharma
 categories: 
   - Google Summer of Code
   - Synthetic Biology
-date: 2025-06-08T17:46:01+0530
+date: 2025-07-08T17:46:01+0530
 version: 1.1.1
 ---
 
