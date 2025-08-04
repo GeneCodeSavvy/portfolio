@@ -15,7 +15,10 @@ description: I talk about Web 3 technologies
     <h4>No flourishes. No filler. Just pure content.</h4>
   </div>
   <div class="image-container">
-    <img src="assets/favicon/pixil-frame-0.svg" alt="Branding Image" height="200px" width="200px">
+    <img src="assets/favicon/pixil-frame-0.svg"
+             alt="Branding Image"
+             height="200px"
+             width="200px">
   </div>
 </section>
 <section id="intro">
@@ -23,7 +26,8 @@ description: I talk about Web 3 technologies
     <h2>Who am I ?</h2>
     <p>
       I'm a self-taught developer building full stack apps and documenting the
-      journey.<br>
+      journey.
+      <br>
       I care more about finishing things than perfecting them. I learn
       by doing, so I build every day and ship small tools every week.
     </p>
@@ -42,14 +46,13 @@ description: I talk about Web 3 technologies
         </div>
       </div>
     </div>
-    <a href="https://github.com/GeneCodeSavvy" target="_blank"> See what I'm building</a>
+    <a href="https://github.com/GeneCodeSavvy" target="_blank">See what I'm building</a>
   </div>
 </section>
 <section id="blog">
   <div class="container">
     <h2>Recent Blogs</h2>
-    {%- for posts in collections.posts | slice(2) -%}
-    {%- for post in posts -%}
+    {%- for post in collections.posts | reverse -%}
     <article class="blog-post-summary">
       <a href="{{ post.url | url }}">
         <h4 class="post-title">{{ post.data.title }}</h4>
@@ -60,7 +63,6 @@ description: I talk about Web 3 technologies
     </article>
     {%- else -%}
     <p>No blog posts yet. Check back soon!</p>
-    {%- endfor -%}
     {%- endfor -%}
     <p class="view-all">
       <a href="{{ '/blog/' | url }}">View all blog posts →</a>
