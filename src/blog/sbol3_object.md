@@ -1,7 +1,7 @@
 ---
 title: "Guide to Creating SBOL Documents"
 description: "A version-agnostic guide to creating SBOL 2 and SBOL 3 objects using Python, perfect for developers new to the Synthetic Biology Open Language."
-date: 2025-07-28
+date: 2025-07-30
 ---
 
 ### Introduction
