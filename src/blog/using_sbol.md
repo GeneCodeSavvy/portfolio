@@ -1,6 +1,6 @@
 ---
 title: A Perspective on SBOL and the Community
-description: This summer I had the priveledge of working with the SynBioDex Community, as a Google Summer of Code contributor. I am still new to this community and it's offerings. With this blog, I want to share my journey.
+description: This summer I had the privilege of working with the SynBioDex Community, as a Google Summer of Code contributor. I am still new to this community and it's offerings. With this blog, I want to share my journey.
 date: 2025-07-31
 ---
 
@@ -28,8 +28,11 @@ This project tackles this challenge by directly contributing to the development 
 
 ### Mentors and Community
 
-I am being mentored by Dr. Gonzalo and Dr. Jake Beal for this project. Our work started with creating SBOL Notebooks, which will be used to test the converter. This also helped me get more familiar with the SBOL specification. Through this process, their help went beyond just fixing bugs or creating tests; they also taught me the best practices for writing Python code. Other members of the community, such as Dr. Prashant, Dr. Chris, and Dr. Tom have also been helpful in various places while working.
+I’m being mentored by Dr. Gonzalo and Dr. Jake Beal for this project and their expertise is insane! But what really stands out is their patience.
 
-Their guidance also extends beyond the core project goals. Dr. Gonzalo has planned an additional challenge for me: encoding an entire E. coli&rsquo;s genome in SBOL.
-This approach, which combines practical tasks with forward-looking challenges, makes working here exciting.
+From day one, it’s been super hands-on. We started with SBOL Notebooks, which will not only help test the converter but also made me comfortable with SBOL itself. But their guidance wasn’t just the one task. They helped me set up proper tests, proper tutorials and kept reminding me to write clean, readable, maintainable Python code. Stuff that actually matters long term.
+
+After completing the convertor, Dr. Gonzalo has already planned the next exciting step - encoding the entire E. coli genome in SBOL. It’s ambitious, exciting, and also kind of unreal that I get to be part of something like that. But more than anything, it shows how invested they are in pushing my growth.
+
+It’s rare to find mentorship that’s this practical. I’ve learned so much already and I’m just getting started.
 

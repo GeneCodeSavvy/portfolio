@@ -22,7 +22,7 @@ import sbol3
 doc = sbol3.Document()
 
 # Set the namespace to avoid warnings
-namespace = "http://example.org/my_project"
+namespace = "http://example.org/"
 sbol3.set_namespace(namespace)
 ```
 
@@ -36,7 +36,7 @@ import sbol2
 doc = sbol2.Document()
 
 # Set the default homespace for SBOL objects
-sbol2.setHomespace('http://sbols.org/example')
+sbol2.setHomespace('http://sbols.org/')
 ```
 
 </TabItem>
@@ -52,7 +52,7 @@ In SBOL, a `Component` (or `ComponentDefinition` in SBOL2) is a fundamental obje
 ```python
 import sbol3
 
-sbol3.set_namespace("http://example.org/my_project")
+sbol3.set_namespace("http://example.org/")
 doc = sbol3.Document()
 
 # Create a Sequence object
@@ -82,7 +82,7 @@ doc.add(component)
 ```python
 import sbol2
 
-sbol2.setHomespace('http://sbols.org/example')
+sbol2.setHomespace('http://sbols.org/')
 doc = sbol2.Document()
 
 # Create a Sequence object
@@ -119,7 +119,7 @@ SBOL allows you to build hierarchical designs by including components as feature
 ```python
 import sbol3
 
-sbol3.set_namespace("http://example.org/subcomponents")
+sbol3.set_namespace("http://example.org/")
 
 # Define the components to be used as subcomponents
 p_tetr = sbol3.Component("p_tetr", types=[sbol3.SBO_DNA])
@@ -143,7 +143,7 @@ tetr_cassette.features.append(sub_cds)
 ```python
 import sbol2
 
-sbol2.setHomespace('http://sbols.org/examples')
+sbol2.setHomespace('http://sbols.org/')
 doc = sbol2.Document()
 
 # Create ComponentDefinitions for the parts
@@ -175,7 +175,7 @@ A biological design is more than just a collection of parts; it's about how thos
 ```python
 import sbol3
 
-sbol3.set_namespace("http://example.org/interactions")
+sbol3.set_namespace("http://example.org/")
 
 # Assume components for TetR protein and the pTet promoter
 tetr_protein = sbol3.Component("tetr_protein", types=[sbol3.SBO_PROTEIN])
@@ -208,7 +208,7 @@ interaction.participations.append(
 ```python
 import sbol2
 
-sbol2.setHomespace('http://sbols.org/CRISPR_Example')
+sbol2.setHomespace('http://sbols.org/')
 doc = sbol2.Document()
 
 # Define ComponentDefinitions
@@ -253,7 +253,7 @@ To bridge the gap between design and simulation, the `Model` object links your S
 ```python
 import sbol3
 
-sbol3.set_namespace("http://example.org/models")
+sbol3.set_namespace("http://example.org/")
 
 # Create a Model that references an external SBML file
 model = sbol3.Model(
@@ -275,7 +275,7 @@ circuit.models.append(model)
 import sbol2
 from sbol2.constants import EDAM_SBML, SBO_CONTINUOUS
 
-sbol2.setHomespace('http://sbols.org/example')
+sbol2.setHomespace('http://sbols.org/')
 
 # Create a Model object
 model = sbol2.Model(
@@ -303,7 +303,7 @@ As your projects grow, you’ll need a way to organize your SBOL objects. The `C
 ```python
 import sbol3
 
-sbol3.set_namespace("http://example.org/my_project")
+sbol3.set_namespace("http://example.org/")
 doc = sbol3.Document()
 
 component = sbol3.Component("component_1", types=[sbol3.SBO_DNA])
@@ -323,7 +323,7 @@ doc.add(collection)
 ```python
 import sbol2
 
-sbol2.setHomespace('http://sbols.org/example')
+sbol2.setHomespace('http://sbols.org/')
 doc = sbol2.Document()
 
 component_def = sbol2.ComponentDefinition('component_1')
